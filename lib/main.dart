@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:tictactoe/screens/main-menu-screen.dart';
+import 'package:tictactoe/screens/main_menu_screen.dart';
 import 'package:tictactoe/utils/colors.dart';
 
 void main() {
