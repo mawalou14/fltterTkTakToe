@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:tictactoe/screens/main-menu-screen.dart';
+import 'package:tictactoe/utils/colors.dart';
 
 void main() {
   runApp(const MyApp());
@@ -12,12 +14,10 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
-      theme: ThemeData(
-        
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
+      theme: ThemeData.dark().copyWith(
+        scaffoldBackgroundColor: bgColor,
       ),
-      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+      home: const MainMenuScreen(),
     );
   }
 }
