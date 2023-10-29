@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:tictactoe/widgets/custom_text.dart';
 
 class CreateRoomScreen extends StatefulWidget {
   static String routeName = '/create-room';
@@ -11,6 +12,25 @@ class CreateRoomScreen extends StatefulWidget {
 class _CreateRoomScreenState extends State<CreateRoomScreen> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold();
+    // var sizee = MediaQuery.of(context).size;
+    return Scaffold(
+      body: Container(
+        margin: const EdgeInsets.symmetric(
+          horizontal: 20,
+        ),
+        child: const Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            CustomText(
+              shadows: [Shadow(blurRadius: 40, color: Colors.blue)],
+              text: 'Create Room',
+              fontSize: 70,
+            ),
+            // SizedBox(height: sizee.height*0.08),
+          ],
+        ),
+      ),
+    );
   }
 }
