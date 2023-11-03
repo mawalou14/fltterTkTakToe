@@ -16,6 +16,11 @@ app.use(express.json());
 
 const DB = "mongodb+srv://mawalou14:6292568Lufab@cluster0.eyhqffa.mongodb.net/?retryWrites=true&w=majority";
 
+io.on('connectiion', (socket) => {
+    console.log('Connected!');
+});
+
+
 mongoose.connect(DB).then(() => {
     console.log("Connection Successfull");
 })
