@@ -12,22 +12,22 @@ class CreateRoomScreen extends StatefulWidget {
 class _CreateRoomScreenState extends State<CreateRoomScreen> {
   @override
   Widget build(BuildContext context) {
-    // var sizee = MediaQuery.of(context).size;
+    var size = MediaQuery.of(context).size;
     return Scaffold(
       body: Container(
         margin: const EdgeInsets.symmetric(
           horizontal: 20,
         ),
-        child: const Column(
+        child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            CustomText(
+            const CustomText(
               shadows: [Shadow(blurRadius: 40, color: Colors.blue)],
               text: 'Create Room',
               fontSize: 70,
             ),
-            // SizedBox(height: sizee.height*0.08),
+            SizedBox(height: size.height*0.01,),
           ],
         ),
       ),
