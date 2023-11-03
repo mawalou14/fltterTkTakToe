@@ -12,5 +12,10 @@
   "license": "ISC",
   "devDependencies": {
     "nodemon": "^3.0.1"
+  },
+  "dependencies": {
+    "http": "^0.0.1-security",
+    "mongoose": "^8.0.0",
+    "socket.io": "^2.3.0"
   }
 }
