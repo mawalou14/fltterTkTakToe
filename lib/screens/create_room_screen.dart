@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:tictactoe/widgets/custom_button.dart';
 import 'package:tictactoe/widgets/custom_text.dart';
+import 'package:tictactoe/widgets/custom_textfield.dart';
 
 class CreateRoomScreen extends StatefulWidget {
   static String routeName = '/create-room';
@@ -10,6 +12,13 @@ class CreateRoomScreen extends StatefulWidget {
 }
 
 class _CreateRoomScreenState extends State<CreateRoomScreen> {
+  final TextEditingController _nameController = TextEditingController();
+  @override
+  void dispose() {
+    super.dispose();
+    _nameController.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
@@ -27,7 +36,15 @@ class _CreateRoomScreenState extends State<CreateRoomScreen> {
               text: 'Create Room',
               fontSize: 70,
             ),
-            SizedBox(height: size.height*0.01,),
+            SizedBox(
+              height: size.height * 0.08,
+            ),
+            CustomTextField(
+                controller: _nameController, hintText: 'Enter your nickname'),
+            SizedBox(
+              height: size.height * 0.08,
+            ),
+            CustomButton(onTap: () {}, text: 'Create')
           ],
         ),
       ),
