@@ -16,8 +16,11 @@ app.use(express.json());
 
 const DB = "mongodb+srv://mawalou14:6292568Lufab@cluster0.eyhqffa.mongodb.net/?retryWrites=true&w=majority";
 
-io.on('connectiion', (socket) => {
+io.on('connection', (socket) => {
     console.log('Connected!');
+    socket.on("createRoom", ({ nickname }) => {
+     console.log(nickname);
+    });
 });
 
 

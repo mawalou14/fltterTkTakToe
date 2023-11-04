@@ -1,11 +1,11 @@
-import 'package:socket_io_client/socket_io_client.dart' as IO;
+import 'package:socket_io_client/socket_io_client.dart' as io;
 
 class SocketClient {
-  IO.Socket? socket;
+  io.Socket? socket;
   static SocketClient? _instance;
 
   SocketClient._internal() {
-    socket = IO.io('http://192.168.57.90:3000', <String, dynamic>{
+    socket = io.io('http://192.168.57.90:3000', <String, dynamic>{
       'transports': ['websocket'],
       'autoConnect': false,
     });
@@ -17,3 +17,5 @@ class SocketClient {
     return _instance!;
   }
 }
+
+00:58:53
