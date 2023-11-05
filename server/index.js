@@ -20,6 +20,8 @@ io.on("connection", (socket) => {
     console.log("Connected!");
     socket.on("createRoom", ({ nickname }) => {
      console.log(nickname);
+    //  Room is created
+    // Player is stored in the DB
     });
 });
 
