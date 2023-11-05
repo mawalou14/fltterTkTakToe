@@ -18,7 +18,7 @@ const DB = "mongodb+srv://mawalou14:6292568Lufab@cluster0.eyhqffa.mongodb.net/?r
 
 io.on("connection", (socket) => {
     console.log("Connected!");
-    socket.on("createRoom", ({ nickname }) => {
+    socket.on("createRoom", async ({ nickname }) => {
      console.log(nickname);
     //  Room is created
     // Player is stored in the DB
