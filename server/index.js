@@ -16,6 +16,12 @@ app.use(express.json());
 
 const DB = "mongodb+srv://mawalou14:6292568Lufab@cluster0.eyhqffa.mongodb.net/?retryWrites=true&w=majority";
 
+io.on("connection", (socket) => {
+    console.log("Connected!");
+    socket.on("createRoom", ({ nickname }) => {
+     console.log(nickname);
+    });
+});
 
 mongoose.connect(DB).then(() => {
     console.log("Connection to db Successfull");
@@ -24,12 +30,7 @@ mongoose.connect(DB).then(() => {
     console.log(e);
 });
 
-io.on("connection", (socket) => {
-    console.log("Connected!");
-    socket.on("createRoom", ({ nickname }) => {
-     console.log(nickname);
-    });
-});
+
 
 server.listen(port, '0.0.0.0', () => {
     console.log('Server started and running on port ' + port);
