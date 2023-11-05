@@ -5,7 +5,7 @@ class SocketClient {
   static SocketClient? _instance;
 
   SocketClient._internal() {
-    socket = io.io('http://192.168.57.90:3000', <String, dynamic>{
+    socket = io.io('http://192.168.57.90:4000', <String, dynamic>{
       'transports': ['websocket'],
       'autoConnect': false,
     });
@@ -17,5 +17,3 @@ class SocketClient {
     return _instance!;
   }
 }
-
-00:58:53
