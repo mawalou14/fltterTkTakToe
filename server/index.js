@@ -22,6 +22,8 @@ io.on("connection", (socket) => {
     console.log("Connected!");
     socket.on("createRoom", async ({ nickname }) => {
      console.log(nickname);
+     try {
+
     //  Room is created
     let room = new Room();
     let player = {
@@ -31,7 +33,14 @@ io.on("connection", (socket) => {
     };
     room.players.push(player);
     room.turn = player;
-    
+    room = await room.save();
+    const roomId = room._id.toString();
+    socket.join(roomId);
+    // tell client that room has been created
+    io.to(roomId).emit('createRoomSuccess', room);
+     } catch (e) {
+        console.log(e);
+     }
     // Player is stored in the DB
     });
 });
