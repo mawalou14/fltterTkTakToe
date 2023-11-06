@@ -9,6 +9,8 @@ const port = process.env.PORT|| 4000;
 
 var server = http.createServer(app);
 
+const Room = require('./models/room');
+
 var io = require("socket.io")(server);
 
 // Middleware
@@ -21,6 +23,15 @@ io.on("connection", (socket) => {
     socket.on("createRoom", async ({ nickname }) => {
      console.log(nickname);
     //  Room is created
+    let room = new Room();
+    let player = {
+        socketID: socket.id,
+        nickname: nickname,
+        playerType: 'X',
+    };
+    room.players.push(player);
+    room.turn = player;
+    
     // Player is stored in the DB
     });
 });
