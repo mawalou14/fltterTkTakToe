@@ -23,7 +23,6 @@ io.on("connection", (socket) => {
     socket.on("createRoom", async ({ nickname }) => {
      console.log(nickname);
      try {
-
     //  Room is created
     let room = new Room();
     let player = {
