@@ -1,5 +1,5 @@
 
-const mongodb = require('mongodb');
+const mongoose = require('mongoose');
 
 const playerSchema = new mongoose.Schema({
     nickname: {
